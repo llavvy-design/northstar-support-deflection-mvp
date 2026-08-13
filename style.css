@@ -1,5 +1,5 @@
 /* =========================
-   GENERAL
+    GENERAL
 ========================= */
 
 * {
@@ -21,7 +21,7 @@ body {
 
 
 /* =========================
-   NAVIGATION
+    NAVIGATION
 ========================= */
 
 .navbar {
@@ -36,6 +36,7 @@ body {
 
     position: sticky;
     top: 0;
+
     z-index: 1000;
 }
 
@@ -46,13 +47,15 @@ body {
 
 nav {
     display: flex;
-    gap: 28px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 15px;
+
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -62,11 +65,12 @@ nav a:hover {
 
 
 /* =========================
-   HERO
+    HERO
 ========================= */
 
 .hero {
     background: white;
+
     text-align: center;
 
     padding: 100px 20px;
@@ -80,8 +84,10 @@ nav a:hover {
 .welcome-text,
 .section-label {
     color: #d08b28;
+
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 2px;
 
     margin-bottom: 12px;
@@ -89,21 +95,25 @@ nav a:hover {
 
 .hero h1 {
     color: #12355b;
+
     font-size: 52px;
+
     margin-bottom: 20px;
 }
 
 .hero-description {
     color: #5f6b76;
+
     font-size: 18px;
 
     max-width: 650px;
+
     margin: 0 auto 30px;
 }
 
 
 /* =========================
-   BUTTONS
+    BUTTONS
 ========================= */
 
 .primary-button,
@@ -123,6 +133,7 @@ button,
     font-weight: 700;
 
     text-decoration: none;
+
     cursor: pointer;
 
     transition: 0.2s ease;
@@ -132,40 +143,49 @@ button,
 button:hover,
 .card-button:hover {
     background: #b8751c;
+
     transform: translateY(-1px);
 }
 
 
 /* =========================
-   SUPPORT SECTION
+    SUPPORT SECTION
 ========================= */
 
 .support-section {
     padding: 80px 8%;
+
     text-align: center;
 }
 
-.support-section h2 {
+.support-section h2,
+.order-section h2,
+.returns-section h2 {
     color: #12355b;
+
     font-size: 34px;
+
     margin-bottom: 10px;
 }
 
 .section-description {
     color: #697580;
+
     margin-bottom: 40px;
 }
 
 
 /* =========================
-   SUPPORT CARDS
+    SUPPORT CARDS
 ========================= */
 
 .support-grid {
     max-width: 1100px;
+
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
@@ -181,40 +201,290 @@ button:hover,
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 }
 
 .card-icon {
     font-size: 42px;
+
     margin-bottom: 15px;
 }
 
 .support-card h3 {
     color: #12355b;
+
     font-size: 22px;
+
     margin-bottom: 12px;
 }
 
 .support-card p {
     color: #697580;
+
     margin-bottom: 25px;
 
     min-height: 75px;
 }
 
-.support-card button,
 .support-card .card-button {
     margin-top: auto;
 }
 
 
 /* =========================
-   CONTACT
+    FORM STYLING
+========================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #12355b;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccd3da;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid #d08b28;
+
+    border-color: #d08b28;
+}
+
+
+/* =========================
+    ORDER STATUS
+========================= */
+
+.order-section {
+    background: #eef2f6;
+
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.order-container {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+#orderForm {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+}
+
+.eligibility-button {
+    width: 100%;
+
+    background: #12355b;
+
+    color: white;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.eligibility-button:hover {
+    background: #0d2742;
+}
+
+
+/* =========================
+    RETURNS & REFUNDS
+========================= */
+
+.returns-section {
+    background: white;
+
+    padding: 80px 20px;
+
+    text-align: center;
+}
+
+.returns-container {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+#returnForm {
+    background: #f5f7fa;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+}
+
+
+/* =========================
+    VALIDATION
+========================= */
+
+.validation-area {
+    margin-bottom: 20px;
+}
+
+.validation-error {
+    background: #fff4e5;
+
+    border-left: 5px solid #d08b28;
+
+    padding: 15px;
+
+    border-radius: 5px;
+
+    color: #5c4a2c;
+}
+
+.validation-error strong {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+    RESULTS
+========================= */
+
+.result-area {
+    margin-top: 25px;
+}
+
+.result,
+.order-status-result {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.result h2,
+.order-status-result h2 {
+    color: #12355b;
+
+    margin-bottom: 12px;
+}
+
+.result p,
+.order-status-result p {
+    color: #697580;
+
+    margin-bottom: 12px;
+}
+
+.result-icon {
+    font-size: 40px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+    RETURN NEXT STEP
+========================= */
+
+.next-step {
+    background: #eef5fb;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    color: #12355b;
+}
+
+
+/* =========================
+    RETURN HELP
+========================= */
+
+.return-help {
+    background: #12355b;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    margin-top: 30px;
+
+    border-radius: 10px;
+}
+
+.return-help h3 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.return-help p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+    CONTACT
 ========================= */
 
 .contact-section {
     background: #12355b;
+
     color: white;
 
     text-align: center;
@@ -224,6 +494,7 @@ button:hover,
 
 .contact-content {
     max-width: 650px;
+
     margin: auto;
 }
 
@@ -233,6 +504,7 @@ button:hover,
 
 .contact-section h2 {
     font-size: 34px;
+
     margin-bottom: 12px;
 }
 
@@ -242,11 +514,12 @@ button:hover,
 
 
 /* =========================
-   FOOTER
+    FOOTER
 ========================= */
 
 footer {
     background: #0d2742;
+
     color: white;
 
     text-align: center;
@@ -260,18 +533,21 @@ footer p {
 
 
 /* =========================
-   MOBILE
+    MOBILE
 ========================= */
 
 @media (max-width: 768px) {
 
     .navbar {
         flex-direction: column;
+
         gap: 15px;
     }
 
     nav {
-        gap: 18px;
+        justify-content: center;
+
+        gap: 12px;
     }
 
     .hero {
@@ -290,12 +566,21 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .support-section {
+    .support-section,
+    .order-section,
+    .returns-section {
         padding: 60px 20px;
     }
 
     .support-section h2,
+    .order-section h2,
+    .returns-section h2,
     .contact-section h2 {
         font-size: 28px;
+    }
+
+    #orderForm,
+    #returnForm {
+        padding: 25px 20px;
     }
 }

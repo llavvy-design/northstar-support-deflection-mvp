@@ -12,32 +12,49 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <header class="navbar">
-        <div class="logo">Northstar Support</div>
+
+        <div class="logo">
+            Northstar Support
+        </div>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#support">Support</a>
+            <a href="#order-status">Order Status</a>
+            <a href="#returns">Returns &amp; Refunds</a>
             <a href="#contact">Contact</a>
         </nav>
+
     </header>
 
 
-    <!-- Main Customer Entry Point -->
     <main>
 
-        <!-- Home Section -->
+        <!-- =========================
+             HOME
+        ========================== -->
+
         <section id="home" class="hero">
+
             <div class="hero-content">
 
-                <p class="welcome-text">WELCOME TO</p>
+                <p class="welcome-text">
+                    WELCOME TO
+                </p>
 
-                <h1>Northstar Support</h1>
+                <h1>
+                    Northstar Support
+                </h1>
 
                 <p class="hero-description">
-                    Get quick and simple help with your orders, returns,
-                    refunds, or contact our support team for assistance.
+                    Get quick and simple help with your orders,
+                    returns, refunds, or contact our support team
+                    for assistance.
                 </p>
 
                 <a href="#support" class="primary-button">
@@ -45,15 +62,23 @@
                 </a>
 
             </div>
+
         </section>
 
 
-        <!-- Support Options -->
+        <!-- =========================
+             SUPPORT OPTIONS
+        ========================== -->
+
         <section id="support" class="support-section">
 
-            <p class="section-label">SUPPORT CENTRE</p>
+            <p class="section-label">
+                SUPPORT CENTRE
+            </p>
 
-            <h2>How can we help you?</h2>
+            <h2>
+                How can we help you?
+            </h2>
 
             <p class="section-description">
                 Choose an option below to get the help you need.
@@ -62,54 +87,70 @@
 
             <div class="support-grid">
 
-                <!-- Order Status -->
+
+                <!-- ORDER STATUS CARD -->
+
                 <article class="support-card">
 
-                    <div class="card-icon">📦</div>
+                    <div class="card-icon">
+                        📦
+                    </div>
 
-                    <h3>Order Status</h3>
+                    <h3>
+                        Order Status
+                    </h3>
 
                     <p>
-                        Check your order status and find information
-                        about your delivery.
+                        Enter your order number to check
+                        the current status of your order.
                     </p>
 
-                    <button type="button" onclick="showSupportMessage('Order Status')">
+                    <a href="#order-status" class="card-button">
                         Check Order Status
-                    </button>
+                    </a>
 
                 </article>
 
 
-                <!-- Returns & Refunds -->
+                <!-- RETURNS CARD -->
+
                 <article class="support-card">
 
-                    <div class="card-icon">↩️</div>
+                    <div class="card-icon">
+                        ↩️
+                    </div>
 
-                    <h3>Returns &amp; Refunds</h3>
+                    <h3>
+                        Returns &amp; Refunds
+                    </h3>
 
                     <p>
-                        Get help with returning an item or checking
-                        the status of your refund.
+                        Check whether your item is eligible
+                        for an automatic return.
                     </p>
 
-                    <button type="button" onclick="showSupportMessage('Returns & Refunds')">
-                        Returns &amp; Refunds
-                    </button>
+                    <a href="#returns" class="card-button">
+                        Check Eligibility
+                    </a>
 
                 </article>
 
 
-                <!-- Contact Support -->
+                <!-- CONTACT CARD -->
+
                 <article class="support-card">
 
-                    <div class="card-icon">💬</div>
+                    <div class="card-icon">
+                        💬
+                    </div>
 
-                    <h3>Contact Support</h3>
+                    <h3>
+                        Contact Support
+                    </h3>
 
                     <p>
-                        Need more help? Contact our support team
-                        for assistance with your issue.
+                        Need more help? Contact our support
+                        team for assistance with your issue.
                     </p>
 
                     <a href="#contact" class="card-button">
@@ -123,14 +164,215 @@
         </section>
 
 
-        <!-- Contact Section -->
+        <!-- =========================
+             ORDER STATUS
+        ========================== -->
+
+        <section id="order-status" class="order-section">
+
+            <div class="order-container">
+
+                <p class="section-label">
+                    ORDER STATUS
+                </p>
+
+                <h2>
+                    Check Your Order
+                </h2>
+
+                <p class="section-description">
+                    Enter your order number below to see
+                    the current status of your order.
+                </p>
+
+
+                <!-- ORDER FORM -->
+
+                <form id="orderForm">
+
+                    <div class="form-group">
+
+                        <label for="orderNumber">
+                            Order Number
+                        </label>
+
+                        <input type="text" id="orderNumber" placeholder="Example: NS1001" autocomplete="off">
+
+                    </div>
+
+
+                    <!-- ORDER VALIDATION -->
+
+                    <div id="orderValidation" class="validation-area" aria-live="polite">
+                    </div>
+
+
+                    <button type="submit" class="eligibility-button">
+                        Check Order Status
+                    </button>
+
+                </form>
+
+
+                <!-- ORDER RESULT -->
+
+                <div id="orderResult" class="result-area" aria-live="polite">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RETURNS & REFUNDS
+        ========================== -->
+
+        <section id="returns" class="returns-section">
+
+            <div class="returns-container">
+
+                <p class="section-label">
+                    RETURNS &amp; REFUNDS
+                </p>
+
+                <h2>
+                    Check Return Eligibility
+                </h2>
+
+                <p class="section-description">
+                    Enter your order information below to check
+                    whether your return can be handled automatically.
+                </p>
+
+
+                <!-- RETURN FORM -->
+
+                <form id="returnForm">
+
+
+                    <!-- RETURN ORDER NUMBER -->
+
+                    <div class="form-group">
+
+                        <label for="returnOrderNumber">
+                            Order Number
+                        </label>
+
+                        <input type="text" id="returnOrderNumber" placeholder="Example: NS1001" autocomplete="off">
+
+                    </div>
+
+
+                    <!-- ITEM -->
+
+                    <div class="form-group">
+
+                        <label for="item">
+                            Item
+                        </label>
+
+                        <input type="text" id="item" placeholder="Enter the item name">
+
+                    </div>
+
+
+                    <!-- RETURN REASON -->
+
+                    <div class="form-group">
+
+                        <label for="returnReason">
+                            Return Reason
+                        </label>
+
+                        <select id="returnReason">
+
+                            <option value="">
+                                Select a reason
+                            </option>
+
+                            <option value="damaged">
+                                Item arrived damaged
+                            </option>
+
+                            <option value="wrong_item">
+                                Wrong item received
+                            </option>
+
+                            <option value="not_needed">
+                                No longer needed
+                            </option>
+
+                            <option value="incorrect">
+                                Item was not as described
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RETURN VALIDATION -->
+
+                    <div id="validationArea" class="validation-area" aria-live="polite">
+                    </div>
+
+
+                    <!-- CHECK ELIGIBILITY -->
+
+                    <button type="submit" class="eligibility-button">
+                        Check Eligibility
+                    </button>
+
+                </form>
+
+
+                <!-- RETURN RESULT -->
+
+                <div id="resultArea" class="result-area" aria-live="polite">
+                </div>
+
+
+                <!-- RETURN CONTACT SUPPORT -->
+
+                <div class="return-help">
+
+                    <h3>
+                        Need help with your return?
+                    </h3>
+
+                    <p>
+                        If your request is not eligible or
+                        you need assistance, our support team
+                        can help.
+                    </p>
+
+                    <a href="#contact" class="card-button">
+                        Contact Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+            CONTACT SUPPORT
+        ========================== -->
+
         <section id="contact" class="contact-section">
 
             <div class="contact-content">
 
-                <p class="section-label">NEED MORE HELP?</p>
+                <p class="section-label">
+                    NEED MORE HELP?
+                </p>
 
-                <h2>We're here to help.</h2>
+                <h2>
+                    We're here to help.
+                </h2>
 
                 <p>
                     If you cannot find what you are looking for,
@@ -148,9 +390,16 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+        FOOTER
+    ========================== -->
+
     <footer>
-        <p>&copy; 2026 Northstar Support</p>
+
+        <p>
+            &copy; 2026 Northstar Support
+        </p>
+
     </footer>
 
 
