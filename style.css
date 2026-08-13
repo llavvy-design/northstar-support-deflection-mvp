@@ -1,1 +1,174 @@
 /* Northstar Support MVP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    background: #12355b;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+    background: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #12355b;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #5b6470;
+    margin-bottom: 30px;
+}
+
+.primary-button,
+button {
+    background: #e09f3e;
+    color: #17202a;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.primary-button:hover,
+button:hover {
+    opacity: 0.85;
+}
+
+/* Support Section */
+.support-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.support-section h2 {
+    font-size: 32px;
+    color: #12355b;
+    margin-bottom: 35px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.support-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.support-card h3 {
+    color: #12355b;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.support-card p {
+    color: #626b75;
+    margin-bottom: 25px;
+}
+
+/* Contact */
+.contact-section {
+    background: #12355b;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-section h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    margin-bottom: 25px;
+}
+
+/* Footer */
+footer {
+    background: #0d2742;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
