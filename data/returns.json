@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "orderId": "NS1001",
+    "itemName": "Wireless Headphones",
+    "returnEligible": true,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": "Original payment method",
+    "returnInstructions": [
+      "Keep the item in its original condition.",
+      "Package the item securely.",
+      "Contact Northstar Support to begin the return.",
+      "Once the item is received and inspected, the refund will be processed."
+    ]
+  },
+  {
+    "orderId": "NS1002",
+    "itemName": "Smart Watch",
+    "returnEligible": true,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": "Original payment method",
+    "returnInstructions": [
+      "Keep the item in its original condition.",
+      "Package the item securely.",
+      "Contact Northstar Support to begin the return.",
+      "Once the item is received and inspected, the refund will be processed."
+    ]
+  },
+  {
+    "orderId": "NS1003",
+    "itemName": "Laptop Backpack",
+    "returnEligible": false,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": null,
+    "returnInstructions": []
+  }
+]
