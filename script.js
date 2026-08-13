@@ -1,13 +1,13 @@
 // Northstar Support MVP
-// =======================================
+// ========================================
 // NORTHSTAR SUPPORT
 // Order Status Functionality
-// =======================================
+// ========================================
 
 
-// ---------------------------------------
+// ----------------------------------------
 // DOM Elements
-// ---------------------------------------
+// ----------------------------------------
 
 const orderSearchForm = document.getElementById("order-search-form");
 
@@ -43,8 +43,7 @@ orderSearchForm.addEventListener("submit", function (event) {
     }
 
     findOrder(orderId);
-}
-);
+});
 
 
 // ----------------------------------------
@@ -299,6 +298,268 @@ function hideOrderError() {
 function hideOrderResult() {
 
     orderResult.hidden = true;
+
+}
+
+
+// =======================================
+// RETURNS & REFUNDS FUNCTIONALITY
+// =======================================
+
+
+// ---------------------------------------
+// DOM Elements
+// ---------------------------------------
+
+const returnsForm =
+    document.getElementById("returns-form");
+
+const returnOrderInput =
+    document.getElementById("return-order-id");
+
+const returnItemInput =
+    document.getElementById("return-item");
+
+const returnReasonInput =
+    document.getElementById("return-reason");
+
+const returnError =
+    document.getElementById("return-error");
+
+const returnResult =
+    document.getElementById("return-result");
+
+
+// ---------------------------------------
+// Handle Returns Form
+// ---------------------------------------
+
+returnsForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    hideReturnError();
+    hideReturnResult();
+
+    const orderId =
+        returnOrderInput.value.trim().toUpperCase();
+
+    const itemName =
+        returnItemInput.value.trim().toLowerCase();
+
+    const reason =
+        returnReasonInput.value;
+
+    // Check required information
+    if (!orderId) {
+
+        showReturnError(
+            "Please enter your order number."
+        );
+
+        return;
+    }
+
+    if (!itemName) {
+
+        showReturnError(
+            "Please enter the item you want to return."
+        );
+
+        return;
+    }
+
+    if (!reason) {
+
+        showReturnError(
+            "Please select a reason for the return."
+        );
+
+        return;
+    }
+
+    checkReturnEligibility(
+        orderId,
+        itemName
+    );
+
+});
+
+
+// ---------------------------------------
+// Load Returns Data
+// ---------------------------------------
+
+async function checkReturnEligibility(
+    orderId,
+    itemName
+) {
+
+    try {
+
+        const response =
+            await fetch("data/returns.json");
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load returns data."
+            );
+
+        }
+
+        const returns =
+            await response.json();
+
+
+        // Find matching order and item
+        const returnRecord =
+            returns.find(function (item) {
+
+                return (
+                    item.orderId.toUpperCase() === orderId &&
+                    item.itemName.toLowerCase() === itemName
+                );
+
+            });
+
+
+        // No matching return record
+        if (!returnRecord) {
+
+            showReturnError(
+                "We couldn't find that order and item. " +
+                "Please check your information and try again."
+            );
+
+            return;
+        }
+
+
+        // Display the result
+        displayReturnResult(returnRecord);
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        showReturnError(
+            "We're having trouble checking your return information. " +
+            "Please try again later."
+        );
+
+    }
+
+}
+
+
+// ---------------------------------------
+// Display Return Result
+// ---------------------------------------
+
+function displayReturnResult(returnRecord) {
+
+    const title =
+        document.getElementById(
+            "return-result-title"
+        );
+
+    const message =
+        document.getElementById(
+            "return-result-message"
+        );
+
+    const instructions =
+        document.getElementById(
+            "return-instructions"
+        );
+
+
+    if (returnRecord.returnEligible) {
+
+        title.textContent =
+            "Your item is eligible for return.";
+
+        message.textContent =
+            `Your ${returnRecord.itemName} can be returned. ` +
+            `The expected return window is ${returnRecord.returnWindow}. ` +
+            `Refunds are processed using the ${returnRecord.refundMethod}.`;
+
+
+        instructions.innerHTML = `
+            <h4>What to do next</h4>
+
+            <ul>
+                ${returnRecord.returnInstructions
+                    .map(
+                        instruction =>
+                            `<li>${instruction}</li>`
+                    )
+                    .join("")}
+            </ul>
+        `;
+
+    } else {
+
+        title.textContent =
+            "This item is not currently eligible for return.";
+
+        message.textContent =
+            `The ${returnRecord.itemName} associated with order ` +
+            `${returnRecord.orderId} is not eligible for return ` +
+            `under the current return rules.`;
+
+        instructions.innerHTML = `
+            <p>
+                If you believe this result is incorrect,
+                please contact Northstar Support for assistance.
+            </p>
+        `;
+
+    }
+
+
+    returnResult.hidden = false;
+
+
+    setTimeout(function () {
+
+        returnResult.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 100);
+
+}
+
+
+// ---------------------------------------
+// Return Error Handling
+// ---------------------------------------
+
+function showReturnError(message) {
+
+    returnError.textContent = message;
+
+    returnError.hidden = false;
+
+}
+
+
+function hideReturnError() {
+
+    returnError.textContent = "";
+
+    returnError.hidden = true;
+
+}
+
+
+function hideReturnResult() {
+
+    returnResult.hidden = true;
 
 }
 
