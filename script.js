@@ -1,13 +1,13 @@
 // Northstar Support MVP
-// ========================================
+// =======================================
 // NORTHSTAR SUPPORT
 // Order Status Functionality
-// ========================================
+// =======================================
 
 
-// ----------------------------------------
+// ---------------------------------------
 // DOM Elements
-// ----------------------------------------
+// ---------------------------------------
 
 const orderSearchForm = document.getElementById("order-search-form");
 
@@ -43,7 +43,8 @@ orderSearchForm.addEventListener("submit", function (event) {
     }
 
     findOrder(orderId);
-});
+}
+);
 
 
 // ----------------------------------------
