@@ -28,6 +28,20 @@
     ]
   },
   {
+    "orderId": "NS1002",
+    "itemName": "Watch Strap",
+    "returnEligible": true,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": "Original payment method",
+    "returnInstructions": [
+       "Keep the item in its original condition.",
+      "Package the item securely.",
+      "Contact Northstar Support to begin the return.",
+      "Once the item is received and inspected, the refund will be processed."
+    ]
+  },
+  {
     "orderId": "NS1003",
     "itemName": "Laptop Backpack",
     "returnEligible": false,
@@ -35,5 +49,56 @@
     "reasonRequired": true,
     "refundMethod": null,
     "returnInstructions": []
+  },
+  {
+    "orderId": "NS1004",
+    "itemName": "Bluetooth Speaker",
+    "returnEligible": true,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": "Original payment method",
+    "returnInstructions": [
+      "Keep the item in its original condition.",
+      "Package the item securely.",
+      "Contact Northstar Support to begin the return.",
+      "Once the item is received and inspected, the refund will be processed."
+    ]
+  },
+  {
+    "orderId": "NS1005",
+    "itemName": "Gaming Mouse",
+    "returnEligible": true,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": "Original payment method",
+    "returnInstructions": [
+      "Keep the item in its original condition.",
+      "Package the item securely.",
+      "Contact Northstar Support to begin the return.",
+      "Once the item is received and inspected, the refund will be processed."
+    ]
+  },
+  {
+    "orderId": "NS1005",
+    "itemName": "Mouse Pad",
+    "returnEligible": false,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": null,
+    "returnInstructions": []
+  },
+  {
+    "orderId": "NS1006",
+    "itemName": "Digital Camera",
+    "returnEligible": true,
+    "returnWindow": "30 days",
+    "reasonRequired": true,
+    "refundMethod": "Original payment method",
+    "returnInstructions": [
+      "Keep the item in its original condition.",
+      "Package the item securely.",
+      "Contact Northstar Support to begin the return.",
+      "Once the item is received and inspected, the refund will be processed."
+    ]
   }
 ]
