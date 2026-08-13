@@ -1,407 +1,272 @@
+<!-- Northstar Support MVP -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Northstar Support</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
     <header class="navbar">
-
-        <div class="logo">
-            Northstar Support
-        </div>
+        <div class="logo">Northstar Support</div>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#support">Support</a>
-            <a href="#order-status">Order Status</a>
-            <a href="#returns">Returns &amp; Refunds</a>
             <a href="#contact">Contact</a>
         </nav>
-
     </header>
-
 
     <main>
 
-        <!-- =========================
-             HOME
-        ========================== -->
-
+        <!-- Homepage -->
         <section id="home" class="hero">
-
             <div class="hero-content">
+                <h1>How can we help?</h1>
 
-                <p class="welcome-text">
-                    WELCOME TO
-                </p>
-
-                <h1>
-                    Northstar Support
-                </h1>
-
-                <p class="hero-description">
-                    Get quick and simple help with your orders,
-                    returns, refunds, or contact our support team
-                    for assistance.
+                <p>
+                    Welcome to Northstar Support. Get quick help with your
+                    orders, returns, refunds, or speak with our support team.
                 </p>
 
                 <a href="#support" class="primary-button">
                     Get Support
                 </a>
-
             </div>
-
         </section>
 
-
-        <!-- =========================
-             SUPPORT OPTIONS
-        ========================== -->
-
+        <!-- Support Options -->
         <section id="support" class="support-section">
-
-            <p class="section-label">
-                SUPPORT CENTRE
-            </p>
-
-            <h2>
-                How can we help you?
-            </h2>
-
-            <p class="section-description">
-                Choose an option below to get the help you need.
-            </p>
-
+            <h2>What do you need help with?</h2>
 
             <div class="support-grid">
 
-
-                <!-- ORDER STATUS CARD -->
-
-                <article class="support-card">
-
-                    <div class="card-icon">
-                        📦
-                    </div>
-
-                    <h3>
-                        Order Status
-                    </h3>
-
+                <div class="support-card">
+                    <div class="icon">📦</div>
+                    <h3>Order Status</h3>
                     <p>
-                        Enter your order number to check
-                        the current status of your order.
+                        Check the status of your order and find out
+                        where it is in the delivery process.
                     </p>
+                    <a href="#order-status" class="card-button">Check Order Status</a>
+                </div>
 
-                    <a href="#order-status" class="card-button">
-                        Check Order Status
-                    </a>
-
-                </article>
-
-
-                <!-- RETURNS CARD -->
-
-                <article class="support-card">
-
-                    <div class="card-icon">
-                        ↩️
-                    </div>
-
-                    <h3>
-                        Returns &amp; Refunds
-                    </h3>
-
+                <div class="support-card">
+                    <div class="icon">↩️</div>
+                    <h3>Returns & Refunds</h3>
                     <p>
-                        Check whether your item is eligible
-                        for an automatic return.
+                        Find information about returning an item
+                        or requesting a refund.
                     </p>
-
-                    <a href="#returns" class="card-button">
-                        Check Eligibility
-                    </a>
-
-                </article>
-
-
-                <!-- CONTACT CARD -->
-
-                <article class="support-card">
-
-                    <div class="card-icon">
-                        💬
-                    </div>
-
-                    <h3>
-                        Contact Support
-                    </h3>
-
-                    <p>
-                        Need more help? Contact our support
-                        team for assistance with your issue.
-                    </p>
-
-                    <a href="#contact" class="card-button">
-                        Contact Support
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ORDER STATUS
-        ========================== -->
-
-        <section id="order-status" class="order-section">
-
-            <div class="order-container">
-
-                <p class="section-label">
-                    ORDER STATUS
-                </p>
-
-                <h2>
-                    Check Your Order
-                </h2>
-
-                <p class="section-description">
-                    Enter your order number below to see
-                    the current status of your order.
-                </p>
-
-
-                <!-- ORDER FORM -->
-
-                <form id="orderForm">
-
-                    <div class="form-group">
-
-                        <label for="orderNumber">
-                            Order Number
-                        </label>
-
-                        <input type="text" id="orderNumber" placeholder="Example: NS1001" autocomplete="off">
-
-                    </div>
-
-
-                    <!-- ORDER VALIDATION -->
-
-                    <div id="orderValidation" class="validation-area" aria-live="polite">
-                    </div>
-
-
-                    <button type="submit" class="eligibility-button">
-                        Check Order Status
+                    <button onclick="showMessage('Returns & Refunds')">
+                        View Returns
                     </button>
-
-                </form>
-
-
-                <!-- ORDER RESULT -->
-
-                <div id="orderResult" class="result-area" aria-live="polite">
                 </div>
 
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             RETURNS & REFUNDS
-        ========================== -->
-
-        <section id="returns" class="returns-section">
-
-            <div class="returns-container">
-
-                <p class="section-label">
-                    RETURNS &amp; REFUNDS
-                </p>
-
-                <h2>
-                    Check Return Eligibility
-                </h2>
-
-                <p class="section-description">
-                    Enter your order information below to check
-                    whether your return can be handled automatically.
-                </p>
-
-
-                <!-- RETURN FORM -->
-
-                <form id="returnForm">
-
-
-                    <!-- RETURN ORDER NUMBER -->
-
-                    <div class="form-group">
-
-                        <label for="returnOrderNumber">
-                            Order Number
-                        </label>
-
-                        <input type="text" id="returnOrderNumber" placeholder="Example: NS1001" autocomplete="off">
-
-                    </div>
-
-
-                    <!-- ITEM -->
-
-                    <div class="form-group">
-
-                        <label for="item">
-                            Item
-                        </label>
-
-                        <input type="text" id="item" placeholder="Enter the item name">
-
-                    </div>
-
-
-                    <!-- RETURN REASON -->
-
-                    <div class="form-group">
-
-                        <label for="returnReason">
-                            Return Reason
-                        </label>
-
-                        <select id="returnReason">
-
-                            <option value="">
-                                Select a reason
-                            </option>
-
-                            <option value="damaged">
-                                Item arrived damaged
-                            </option>
-
-                            <option value="wrong_item">
-                                Wrong item received
-                            </option>
-
-                            <option value="not_needed">
-                                No longer needed
-                            </option>
-
-                            <option value="incorrect">
-                                Item was not as described
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- RETURN VALIDATION -->
-
-                    <div id="validationArea" class="validation-area" aria-live="polite">
-                    </div>
-
-
-                    <!-- CHECK ELIGIBILITY -->
-
-                    <button type="submit" class="eligibility-button">
-                        Check Eligibility
-                    </button>
-
-                </form>
-
-
-                <!-- RETURN RESULT -->
-
-                <div id="resultArea" class="result-area" aria-live="polite">
-                </div>
-
-
-                <!-- RETURN CONTACT SUPPORT -->
-
-                <div class="return-help">
-
-                    <h3>
-                        Need help with your return?
-                    </h3>
-
+                <div class="support-card">
+                    <div class="icon">💬</div>
+                    <h3>Contact Support</h3>
                     <p>
-                        If your request is not eligible or
-                        you need assistance, our support team
-                        can help.
+                        Can't find what you need? Contact our support
+                        team for assistance.
                     </p>
-
-                    <a href="#contact" class="card-button">
-                        Contact Support
-                    </a>
-
+                    <button onclick="showMessage('Contact Support')">
+                        Contact Us
+                    </button>
                 </div>
 
             </div>
-
         </section>
 
+        <!-- Order Status Section -->
+<section id="order-status" class="order-status-section">
 
-        <!-- =========================
-            CONTACT SUPPORT
-        ========================== -->
+    <div class="order-status-container">
 
-        <section id="contact" class="contact-section">
+        <p class="section-label">ORDER SUPPORT</p>
 
-            <div class="contact-content">
+        <h2>Check your order status</h2>
 
-                <p class="section-label">
-                    NEED MORE HELP?
-                </p>
+        <p class="order-status-description">
+            Enter your order number below to see the latest
+            information about your delivery.
+        </p>
 
-                <h2>
-                    We're here to help.
-                </h2>
+        <!-- Search Form -->
+        <form id="order-search-form" class="order-search-form">
 
-                <p>
-                    If you cannot find what you are looking for,
-                    our support team is ready to assist you.
-                </p>
+            <label for="order-id">
+                Order Number
+            </label>
 
-                <button type="button" onclick="contactSupport()">
-                    Contact Northstar Support
+            <div class="order-search-row">
+
+                <input
+                    type="text"
+                    id="order-id"
+                    name="order-id"
+                    placeholder="e.g. NS1001"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Check Order Status
                 </button>
 
             </div>
 
+            <p class="input-help">
+                Enter the order number provided when you placed your order.
+            </p>
+
+        </form>
+
+
+        <!-- Error Message -->
+        <div
+            id="order-error"
+            class="order-error"
+            role="alert"
+            hidden
+        >
+        </div>
+
+
+        <!-- Order Result -->
+        <div
+            id="order-result"
+            class="order-result"
+            hidden
+        >
+
+            <div class="order-result-header">
+
+                <div>
+                    <p class="result-label">ORDER</p>
+
+                    <h3 id="result-order-id">
+                        --
+                    </h3>
+                </div>
+
+                <span
+                    id="result-status"
+                    class="status-badge"
+                >
+                    --
+                </span>
+
+            </div>
+
+
+            <!-- Customer / Delivery Information -->
+            <div class="order-summary">
+
+                <div class="summary-item">
+
+                    <span class="summary-label">
+                        Customer
+                    </span>
+
+                    <strong id="result-customer">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span class="summary-label">
+                        Order Date
+                    </span>
+
+                    <strong id="result-order-date">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span class="summary-label">
+                        Estimated Delivery
+                    </span>
+
+                    <strong id="result-delivery">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <span class="summary-label">
+                        Tracking Number
+                    </span>
+
+                    <strong id="result-tracking">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Order Items -->
+            <div class="order-items">
+
+                <h4>Order Items</h4>
+
+                <div id="result-items">
+                    <!-- Items generated by JavaScript -->
+                </div>
+
+            </div>
+
+
+            <!-- Order Timeline -->
+            <div class="order-timeline">
+
+                <h4>Order Progress</h4>
+
+                <div id="timeline">
+                    <!-- Timeline generated by JavaScript -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-section">
+            <h2>Need more help?</h2>
+            <p>
+                Our support team is ready to help you with your issue.
+            </p>
+
+            <button onclick="showMessage('Contact Support')">
+                Contact Northstar Support
+            </button>
         </section>
 
     </main>
 
-
-    <!-- =========================
-        FOOTER
-    ========================== -->
-
     <footer>
-
-        <p>
-            &copy; 2026 Northstar Support
-        </p>
-
+        <p>&copy; 2026 Northstar Support. All rights reserved.</p>
     </footer>
-
 
     <script src="script.js"></script>
 
