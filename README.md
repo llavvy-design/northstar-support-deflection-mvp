@@ -138,12 +138,20 @@ Technology Stack👩‍💻👨‍💻
 
 The MVP is intentionally built using simple technologies suitable for a lightweight prototype.
 Technology.         Purpose
+
 HTML................Structure of the website
+
+
 CSS.................Layout, styling and visual presentation
+
 JavaScript..........User interaction, decision logic and validation
+
 JSON / JavaScript...Simulated order and return information
+
 GitHub..............Source-code repository and version control
+
 GitHub Projects.....Task management and sprint tracking
+
 Google Docs.........Project planning, requirements, testing and documentation
 
 
@@ -152,6 +160,7 @@ File Responsibilities
 i) index.html
 
 Contains the structure of the website, including:
+
 Homepage,
 Support-category options,
 Order Status interface,
@@ -163,6 +172,7 @@ Result areas
 ii) style.css
 
 Controls the visual presentation of the website, including:
+
 Layout,
 Spacing,
 Typography,
@@ -199,6 +209,7 @@ The MVP uses straightforward rules to determine the appropriate response.
 i) Order Status
 
 Conceptually:
+
 IF order number is empty → Ask customer to enter an order number
 
 ELSE IF order number exists → Display the corresponding order status
@@ -208,6 +219,7 @@ ELSE → Display "Order Not Found" → Provide Contact Support option
 ii) Returns & Refunds
 
 Conceptually:
+
 IF required information is missing → Ask customer to provide the missing information
 
 ELSE IF item is eligible → Display return eligibility and guidance
@@ -227,6 +239,8 @@ We're unable to resolve this request automatically.
 Please contact Northstar Support for further assistance.
 
 [ Contact support ]
+
+
 
 
 How to Run the Project
@@ -251,56 +265,96 @@ The main test areas are:
 i) Order Status
 
 Valid order number, 
+
 Different order statuses, 
+
 Unknown order, 
+
 Empty input, 
+
 Invalid input
 
 ii) Returns & Refunds
 
 Eligible return, 
+
 Ineligible return, 
+
 Missing order number, 
+
 Missing item information, 
+
 Missing return reason, 
+
 Human-support escalation
+
+
 
 MVP Success Criteria
 
 The MVP is considered successful when the following can be demonstrated:
+
 [ ] A customer can open the Northstar Support website.  
+
 [ ] A customer can select Order Status.  
+
 [ ] A valid sample order produces the correct simulated status.
+
 [ ] An unknown order produces a clear error message.  
+
 [ ] Missing input is handled appropriately.  
+
 [ ] A customer can select Returns & Refunds.  
+
 [ ] An eligible return produces the correct result.  
+
 [ ] An ineligible return produces the correct result.  
+
 [ ] Missing return information is handled appropriately.  
+
 [ ] An unresolved case provides a human-support option.  
+
 [ ] Both complete customer journeys can be demonstrated from the homepage to the final response.  
+
 [ ] The application does not depend on real customer or production data.  
+
+
 
 
 🚫 Out of Scope
 
 To keep the project within the MVP scope, the following are not initially included:
+
 ❌ AI chatbot, 
+
 ❌ Generative AI, 
+
 ❌ Real customer accounts, 
+
 ❌ User authentication, 
+
 ❌ Real payment processing, 
+
 ❌ Real refunds, 
+
 ❌ Real shipping API, 
+
 ❌ Production order-management integration, 
+
 ❌ Production customer database, 
+
 ❌ Live inventory/stock availability, 
+
 ❌ Advanced analytics, 
+
 ❌ Full commercial customer-support platform
+
+
 
 ⚠️ Known Limitations
 
 The prototype has several deliberate limitations.
+
 1. Simulated Data -> The system uses fictional/sample data rather than real Northstar records.
 Therefore, an order status displayed by the prototype does not represent a real customer's order.
 
@@ -319,6 +373,8 @@ ii) Returns & Refunds
 5. Prototype-Level Support Escalation-> The Contact Support functionality represents the escalation path in the prototype. It does not necessarily create a real support ticket unless such functionality is specifically implemented.
 
 
+
+
 Data and Privacy
 
 No real customer information should be stored in this prototype.
@@ -331,6 +387,8 @@ Real payment information,
 Real passwords, 
 Production credentials, 
 API keys or other secrets
+
+
 
 Development Workflow
 
@@ -365,6 +423,8 @@ Retest
 Task marked DONE
 
 
+
+
 Future Improvements
 
 If the prototype were developed beyond the MVP, possible improvements could include:
@@ -372,26 +432,41 @@ If the prototype were developed beyond the MVP, possible improvements could incl
 Phase 2
 
 Add Stock Availability support.
+
 Add additional support categories.
+
 Improve responsive/mobile design.
+
 Add richer customer guidance.
+
 Improve accessibility.
+
 
 Phase 3
 
 Add a secure backend.
+
 Connect to a real order-management system.
+
 Integrate with shipping providers.
+
 Implement secure customer authentication.
+
 Connect to a real support-ticket system.
+
 
 Phase 4
 
 Add analytics to measure support deflection.
+
 Identify frequently unresolved customer issues.
+
 Introduce more advanced automation.
+
 Consider an AI-assisted support experience where appropriate.
+
 These improvements are future possibilities, not features claimed to exist in the current MVP.
+
 
 
 Current Project Status
