@@ -1,16 +1,18 @@
-<!-- Northstar Support MVP -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Northstar Support</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <header class="navbar">
         <div class="logo">Northstar Support</div>
 
@@ -21,86 +23,136 @@
         </nav>
     </header>
 
+
+    <!-- Main Customer Entry Point -->
     <main>
 
-        <!-- Homepage -->
+        <!-- Home Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>How can we help?</h1>
 
-                <p>
-                    Welcome to Northstar Support. Get quick help with your
-                    orders, returns, refunds, or speak with our support team.
+                <p class="welcome-text">WELCOME TO</p>
+
+                <h1>Northstar Support</h1>
+
+                <p class="hero-description">
+                    Get quick and simple help with your orders, returns,
+                    refunds, or contact our support team for assistance.
                 </p>
 
                 <a href="#support" class="primary-button">
                     Get Support
                 </a>
+
             </div>
         </section>
+
 
         <!-- Support Options -->
         <section id="support" class="support-section">
-            <h2>What do you need help with?</h2>
+
+            <p class="section-label">SUPPORT CENTRE</p>
+
+            <h2>How can we help you?</h2>
+
+            <p class="section-description">
+                Choose an option below to get the help you need.
+            </p>
+
 
             <div class="support-grid">
 
-                <div class="support-card">
-                    <div class="icon">📦</div>
+                <!-- Order Status -->
+                <article class="support-card">
+
+                    <div class="card-icon">📦</div>
+
                     <h3>Order Status</h3>
-                    <p>
-                        Check the status of your order and find out
-                        where it is in the delivery process.
-                    </p>
-                    <button onclick="showMessage('Order Status')">
-                        Check Order
-                    </button>
-                </div>
 
-                <div class="support-card">
-                    <div class="icon">↩️</div>
-                    <h3>Returns & Refunds</h3>
                     <p>
-                        Find information about returning an item
-                        or requesting a refund.
+                        Check your order status and find information
+                        about your delivery.
                     </p>
-                    <button onclick="showMessage('Returns & Refunds')">
-                        View Returns
-                    </button>
-                </div>
 
-                <div class="support-card">
-                    <div class="icon">💬</div>
+                    <button type="button" onclick="showSupportMessage('Order Status')">
+                        Check Order Status
+                    </button>
+
+                </article>
+
+
+                <!-- Returns & Refunds -->
+                <article class="support-card">
+
+                    <div class="card-icon">↩️</div>
+
+                    <h3>Returns &amp; Refunds</h3>
+
+                    <p>
+                        Get help with returning an item or checking
+                        the status of your refund.
+                    </p>
+
+                    <button type="button" onclick="showSupportMessage('Returns & Refunds')">
+                        Returns &amp; Refunds
+                    </button>
+
+                </article>
+
+
+                <!-- Contact Support -->
+                <article class="support-card">
+
+                    <div class="card-icon">💬</div>
+
                     <h3>Contact Support</h3>
+
                     <p>
-                        Can't find what you need? Contact our support
-                        team for assistance.
+                        Need more help? Contact our support team
+                        for assistance with your issue.
                     </p>
-                    <button onclick="showMessage('Contact Support')">
-                        Contact Us
-                    </button>
-                </div>
+
+                    <a href="#contact" class="card-button">
+                        Contact Support
+                    </a>
+
+                </article>
 
             </div>
+
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="contact-section">
-            <h2>Need more help?</h2>
-            <p>
-                Our support team is ready to help you with your issue.
-            </p>
 
-            <button onclick="showMessage('Contact Support')">
-                Contact Northstar Support
-            </button>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+
+            <div class="contact-content">
+
+                <p class="section-label">NEED MORE HELP?</p>
+
+                <h2>We're here to help.</h2>
+
+                <p>
+                    If you cannot find what you are looking for,
+                    our support team is ready to assist you.
+                </p>
+
+                <button type="button" onclick="contactSupport()">
+                    Contact Northstar Support
+                </button>
+
+            </div>
+
         </section>
 
     </main>
 
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Northstar Support. All rights reserved.</p>
+        <p>&copy; 2026 Northstar Support</p>
     </footer>
+
 
     <script src="script.js"></script>
 
