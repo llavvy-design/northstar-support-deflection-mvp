@@ -98,7 +98,7 @@ async function findOrder(orderId) {
 function displayOrder(order) {
 
     document.getElementById("result-order-id").textContent =
-        #${order.orderId};
+        `#${order.orderId}`;
 
     document.getElementById("result-status").textContent =
         order.status;
@@ -258,7 +258,7 @@ function formatDate(dateString) {
     }
 
     const date =
-        new Date(${dateString}T00:00:00);
+        new Date(`${dateString}T00:00:00`);
 
     return date.toLocaleDateString(
         "en-GB",
@@ -482,7 +482,7 @@ function displayReturnResult(returnRecord) {
         message.textContent =
             `Your ${returnRecord.itemName} can be returned. ` +
             `The expected return window is ${returnRecord.returnWindow}. ` +
-            Refunds are processed using the ${returnRecord.refundMethod}.;
+            `Refunds are processed using the ${returnRecord.refundMethod}.`;
 
 
         instructions.innerHTML = `
@@ -492,7 +492,7 @@ function displayReturnResult(returnRecord) {
                 ${returnRecord.returnInstructions
                     .map(
                         instruction =>
-                            <li>${instruction}</li>
+                            `<li>${instruction}</li>`
                     )
                     .join("")}
             </ul>
@@ -506,7 +506,7 @@ function displayReturnResult(returnRecord) {
         message.textContent =
             `The ${returnRecord.itemName} associated with order ` +
             `${returnRecord.orderId} is not eligible for return ` +
-            under the current return rules.;
+            `under the current return rules.`;
 
         instructions.innerHTML = `
             <p>
@@ -738,7 +738,7 @@ function generateTicketNumber() {
         100 + Math.random() * 900
     );
 
-    return NST-2026-${randomNumber};
+    return `NST-2026-${randomNumber}`;
 
 }
 
@@ -823,4 +823,4 @@ function hideSupportResult() {
 
 }
 
-}
+
