@@ -54,36 +54,34 @@ async function findOrder(orderId) {
 
     try {
 
-        const response = await fetch("data/orders.json");
+        const response = await fetch(
+            `http://localhost:5001/api/orders/${encodeURIComponent(orderId)}`
+        );
+
+        const result = await response.json();
 
         if (!response.ok) {
 
+            if (response.status === 404) {
+
+                showOrderError(
+                    "We couldn't find an order with that number. " +
+                    "Please check the order number and try again."
+                );
+
+                return;
+            }
+
             throw new Error(
-                "Unable to load order data."
+                result.message || "Unable to load order data."
             );
         }
 
-        const orders = await response.json();
-
-        const order = orders.find(
-            item => item.orderId.toUpperCase() === orderId
-        );
-
-        if (!order) {
-
-            showOrderError(
-                "We couldn't find an order with that number. " +
-                "Please check the order number and try again."
-            );
-
-            return;
-        }
-
-        displayOrder(order);
+        displayOrder(result.data);
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Order lookup error:", error);
 
         showOrderError(
             "We're having trouble loading your order information. " +

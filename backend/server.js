@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const cors = require("cors");
 const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
@@ -12,7 +13,8 @@ const PORT = process.env.PORT || 5001;
 // MIDDLEWARE
 // ================================
 
-// Allow Express to read JSON request bodies
+app.use(cors());
+
 app.use(express.json());
 
 
@@ -24,7 +26,6 @@ app.use((req, res, next) => {
 
     next();
 });
-
 
 // ================================
 // ROUTES
