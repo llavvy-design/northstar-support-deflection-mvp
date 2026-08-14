@@ -72,9 +72,7 @@
                         Can't find what you need? Contact our support
                         team for assistance.
                     </p>
-                    <button onclick="contactSupport('Contact Support')">
-                        Contact Us
-                    </button>
+                    <a href="#contact" class="card-button">Contact Us</a>
                 </div>
 
             </div>
@@ -370,25 +368,212 @@
 
 </section>
 
-        <!-- Contact -->
-        <section id="contact" class="contact-section">
-            <h2>Need more help?</h2>
+        <!-- Customer Support -->
+<section id="contact" class="contact-section">
+
+    <div class="contact-container">
+
+        <p class="section-label">CUSTOMER SUPPORT</p>
+
+        <h2>How can we help you?</h2>
+
+        <p class="contact-description">
+            Tell us about your issue and our support team will
+            review your request.
+        </p>
+
+        <!-- Support Request Form -->
+        <form id="support-form" class="support-form">
+
+            <!-- Customer Name -->
+            <div class="form-group">
+
+                <label for="support-name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="support-name"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="form-group">
+
+                <label for="support-email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="support-email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Order Number -->
+            <div class="form-group">
+
+                <label for="support-order-id">
+                    Order Number
+                    <span class="optional">(optional)</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="support-order-id"
+                    placeholder="Example: NS1001"
+                    autocomplete="off"
+                >
+
+                <small>
+                    Include your order number if your issue is related
+                    to an order.
+                </small>
+
+            </div>
+
+
+            <!-- Issue Category -->
+            <div class="form-group">
+
+                <label for="support-category">
+                    Issue Category
+                </label>
+
+                <select id="support-category" required>
+
+                    <option value="">
+                        Select an issue
+                    </option>
+
+                    <option value="Order Status">
+                        Order Status
+                    </option>
+
+                    <option value="Returns & Refunds">
+                        Returns & Refunds
+                    </option>
+
+                    <option value="Delivery">
+                        Delivery
+                    </option>
+
+                    <option value="Payment">
+                        Payment
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Issue Description -->
+            <div class="form-group">
+
+                <label for="support-description">
+                    Describe your issue
+                </label>
+
+                <textarea
+                    id="support-description"
+                    rows="5"
+                    placeholder="Please describe how we can help you..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- Submit -->
+            <button
+                type="submit"
+                class="support-submit-button"
+            >
+                Submit Support Request
+            </button>
+
+        </form>
+
+
+        <!-- Error Message -->
+        <div
+            id="support-error"
+            class="support-message support-error"
+            role="alert"
+            hidden
+        ></div>
+
+
+        <!-- Success Result -->
+        <div
+            id="support-result"
+            class="support-result"
+            hidden
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h3>
+                Support request submitted successfully
+            </h3>
+
             <p>
-                Our support team is ready to help you with your issue.
+                Your request has been received by Northstar Support.
             </p>
 
-            <button onclick="contactSupport('Contact Support')">
-                Contact Northstar Support
-            </button>
-        </section>
+            <div class="ticket-details">
 
-    </main>
+                <div>
+                    <span>Ticket Number</span>
+                    <strong id="support-ticket-number">
+                        --
+                    </strong>
+                </div>
 
-    <footer>
-        <p>&copy; 2026 Northstar Support. All rights reserved.</p>
-    </footer>
+                <div>
+                    <span>Issue</span>
+                    <strong id="support-ticket-category">
+                        --
+                    </strong>
+                </div>
 
-    <script src="script.js"></script>
+                <div>
+                    <span>Order</span>
+                    <strong id="support-ticket-order">
+                        --
+                    </strong>
+                </div>
 
+            </div>
+
+            <p class="ticket-note">
+                Please keep your ticket number for future reference.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+<script src="script.js"></script>
 </body>
 </html>
