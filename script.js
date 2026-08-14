@@ -100,7 +100,7 @@ async function findOrder(orderId) {
 function displayOrder(order) {
 
     document.getElementById("result-order-id").textContent =
-        `#${order.orderId}`;
+        #${order.orderId};
 
     document.getElementById("result-status").textContent =
         order.status;
@@ -260,7 +260,7 @@ function formatDate(dateString) {
     }
 
     const date =
-        new Date(`${dateString}T00:00:00`);
+        new Date(${dateString}T00:00:00);
 
     return date.toLocaleDateString(
         "en-GB",
@@ -484,7 +484,7 @@ function displayReturnResult(returnRecord) {
         message.textContent =
             `Your ${returnRecord.itemName} can be returned. ` +
             `The expected return window is ${returnRecord.returnWindow}. ` +
-            `Refunds are processed using the ${returnRecord.refundMethod}.`;
+            Refunds are processed using the ${returnRecord.refundMethod}.;
 
 
         instructions.innerHTML = `
@@ -494,7 +494,7 @@ function displayReturnResult(returnRecord) {
                 ${returnRecord.returnInstructions
                     .map(
                         instruction =>
-                            `<li>${instruction}</li>`
+                            <li>${instruction}</li>
                     )
                     .join("")}
             </ul>
@@ -508,7 +508,7 @@ function displayReturnResult(returnRecord) {
         message.textContent =
             `The ${returnRecord.itemName} associated with order ` +
             `${returnRecord.orderId} is not eligible for return ` +
-            `under the current return rules.`;
+            under the current return rules.;
 
         instructions.innerHTML = `
             <p>
@@ -575,5 +575,254 @@ function contactSupport() {
         "Thank you for contacting us. " +
         "Our support team will assist you."
     );
+
+}
+
+// =======================================
+// CUSTOMER SUPPORT FUNCTIONALITY
+// =======================================
+
+// ---------------------------------------
+// DOM Elements
+// ---------------------------------------
+
+const supportForm = document.getElementById("support-form");
+const supportNameInput = document.getElementById("support-name");
+const supportEmailInput = document.getElementById("support-email");
+const supportOrderInput = document.getElementById("support-order-id");
+const supportCategoryInput = document.getElementById("support-category");
+const supportDescriptionInput = document.getElementById("support-description");
+
+const supportError = document.getElementById("support-error");
+const supportResult = document.getElementById("support-result");
+
+
+// ---------------------------------------
+// Handle Support Form
+// ---------------------------------------
+
+if (supportForm) {
+
+    supportForm.addEventListener("submit", function (event) {
+
+        // Stop the browser from refreshing the page
+        event.preventDefault();
+
+        console.log("Support form submitted");
+
+
+        // Hide previous messages
+        hideSupportError();
+        hideSupportResult();
+
+
+        // Get form values
+        const name = supportNameInput.value.trim();
+        const email = supportEmailInput.value.trim();
+        const orderId = supportOrderInput.value.trim().toUpperCase();
+        const category = supportCategoryInput.value;
+        const description = supportDescriptionInput.value.trim();
+
+
+        console.log("Support form values:", {
+            name,
+            email,
+            orderId,
+            category,
+            description
+        });
+
+
+        // -----------------------------------
+        // Validation
+        // -----------------------------------
+
+        if (!name) {
+            showSupportError("Please enter your full name.");
+            return;
+        }
+
+        if (!email) {
+            showSupportError("Please enter your email address.");
+            return;
+        }
+
+        if (!category) {
+            showSupportError("Please select an issue category.");
+            return;
+        }
+
+        if (!description) {
+            showSupportError("Please describe your issue.");
+            return;
+        }
+
+
+        // -----------------------------------
+        // Create Support Ticket
+        // -----------------------------------
+
+        createSupportTicket(
+            name,
+            email,
+            orderId,
+            category,
+            description
+        );
+
+    });
+
+}
+
+
+// ---------------------------------------
+// Create Support Ticket
+// ---------------------------------------
+
+function createSupportTicket(
+    name,
+    email,
+    orderId,
+    category,
+    description
+) {
+
+    console.log("Creating support ticket...");
+
+
+    // Generate demo ticket number
+    const ticketNumber = generateTicketNumber();
+
+
+    // Display success result FIRST
+    displaySupportResult(
+        ticketNumber,
+        category,
+        orderId
+    );
+
+
+    // Store ticket information for demo purposes
+    const ticket = {
+        ticketNumber: ticketNumber,
+        customerName: name,
+        email: email,
+        orderId: orderId || "Not provided",
+        category: category,
+        description: description,
+        createdAt: new Date().toISOString()
+    };
+
+
+    console.log("Support Ticket Created:", ticket);
+
+
+    // Save ticket in browser storage
+    localStorage.setItem(
+        ticketNumber,
+        JSON.stringify(ticket)
+    );
+
+
+    // Clear the form AFTER successful submission
+    supportForm.reset();
+
+}
+
+
+// ---------------------------------------
+// Generate Ticket Number
+// ---------------------------------------
+
+function generateTicketNumber() {
+
+    const randomNumber = Math.floor(
+        100 + Math.random() * 900
+    );
+
+    return NST-2026-${randomNumber};
+
+}
+
+
+// ---------------------------------------
+// Display Support Result
+// ---------------------------------------
+
+function displaySupportResult(
+    ticketNumber,
+    category,
+    orderId
+) {
+
+    console.log("Displaying support result:", {
+        ticketNumber,
+        category,
+        orderId
+    });
+
+
+    // Ticket Number
+    document.getElementById(
+        "support-ticket-number"
+    ).textContent = ticketNumber;
+
+
+    // Issue Category
+    document.getElementById(
+        "support-ticket-category"
+    ).textContent = category;
+
+
+    // Order Number
+    document.getElementById(
+        "support-ticket-order"
+    ).textContent = orderId || "Not provided";
+
+
+    // Show success message
+    supportResult.hidden = false;
+
+
+    // Scroll to success message
+    setTimeout(function () {
+
+        supportResult.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 100);
+
+}
+
+
+// ---------------------------------------
+// Support Error Handling
+// ---------------------------------------
+
+function showSupportError(message) {
+
+    supportError.textContent = message;
+
+    supportError.hidden = false;
+
+}
+
+
+function hideSupportError() {
+
+    supportError.textContent = "";
+
+    supportError.hidden = true;
+
+}
+
+
+function hideSupportResult() {
+
+    supportResult.hidden = true;
+
+}
 
 }
