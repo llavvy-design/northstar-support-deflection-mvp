@@ -1,7 +1,7 @@
 # northstar-support-deflection-mvp
 
 
-Project Overview
+PROJECT OVERVIEW
 
 The Northstar Support Deflection MVP is a lightweight self-service support website designed to help customers resolve common support questions without immediately requiring assistance from a human support agent.
 The prototype uses guided decision-tree flows to direct customers toward appropriate answers based on the information they provide.
@@ -12,7 +12,7 @@ The prototype uses simulated/sample data rather than connecting to real Northsta
 The purpose of the MVP is to demonstrate how a self-service support experience could reduce repetitive support requests while providing customers with a clear route to human assistance when automated resolution is not possible.
 
 
-Project Goal
+PROJECT GOAL
 
 The main goal of the project is to demonstrate a working self-service support experience that allows customers to obtain answers to common questions through guided interactions.
 Instead of immediately contacting a support agent, a customer can:
@@ -20,7 +20,7 @@ Open the support website → select a support category → provide the required 
 The MVP is intentionally limited in scope so that the core customer journeys can be completed and demonstrated within the sprint.
 
 
-Problem Statement
+PROBLEM STATEMENT
 
 Customer support teams can receive large numbers of repetitive requests, including questions such as:
 "Where is my order?"
@@ -31,7 +31,7 @@ When these requests require manual handling individually, support staff may spen
 The Northstar Support Deflection MVP explores how a simple guided support website can provide customers with immediate answers to selected common questions while escalating unresolved cases to human support.
 
 
-Proposed Solution
+PROPOSED SOLUTION
 
 The proposed solution is a self-service support website based on guided decision-tree flows.
 The customer begins at the homepage and chooses the type of assistance they need.
@@ -65,7 +65,7 @@ Receive appropriate guidance.
 Contact human support when automated resolution is not appropriate.
 
 
-Customer Support Flows
+CUSTOMER SUPPORT FLOWS
 
 i) Order Status Flow
 Homepage
@@ -202,8 +202,14 @@ Contains simulated return/eligibility information used by the Returns & Refunds 
 README.md
 Contains information about the project, setup instructions, scope, testing, limitations and future improvements.
 
+vi) Backend
 
-Decision Logic
+Responsible for handling the application's server-side logic and providing the API services required by the frontend. It manages order-status lookups, processes requests from the frontend, retrieves the relevant data, returns expected results, and handles errors such as invalid or unavailable orders.
+
+The backend is built using Node.js and Express and includes the necessary configuration and dependencies for running the API locally. It also enables communication between the frontend and backend through API endpoints.
+
+
+DECISION LOGIC
 
 The MVP uses straightforward rules to determine the appropriate response.
 i) Order Status
@@ -243,7 +249,42 @@ Please contact Northstar Support for further assistance.
 
 
 
-How to Run the Project
+******** HOW TO SET UP THE PROJECT *******
+Prerequisites
+A person running the project should have:
+Git
+Node.js
+npm
+A web browser
+Access to the GitHub repository
+
+Step 1 — Clone the repository
+Open Git Bash or another terminal and run:
+git clone [GITHUB_REPOSITORY_URL]
+Then enter the project:
+cd northstar-support-deflection-mvp
+
+Step 2 — Enter the backend directory
+cd backend
+
+Step 3 — Install backend dependencies
+Run:
+npm install
+This installs the dependencies defined in package.json.
+
+***** HOW TO RUN THE PROJECT*****
+Step 1 — Start the backend
+From the backend directory, run the backend using the command confirmed by the final package.json.
+For example, if the repository uses a development script:
+npm run dev
+If it does not have a dev script, use the actual command configured in the repository, such as:
+node server.js
+When the backend starts successfully, it should display its local server address in the terminal.
+For your current setup, you have previously confirmed that the API runs on:
+http://localhost:5001
+
+Step 2 — Open the frontend
+Open the project's frontend through the method documented and tested by the team BY:
 
 Option 1 — Open Locally
 
@@ -255,9 +296,14 @@ Option 2 — Use a Local Development Environment
 
 A developer can open the project using a code editor such as Visual Studio Code.
 The project files can then be edited and tested locally in a browser.
+The frontend should then communicate with the running backend API.
+Important
+The backend must remain running while testing features that depend on the API.
 
 
-Testing
+
+
+TESTING
 
 Testing focuses on determining whether the MVP behaves according to its defined requirements.
 The main test areas are:
@@ -290,7 +336,7 @@ Human-support escalation
 
 
 
-MVP Success Criteria
+MVP SUCCES CRITERIA
 
 The MVP is considered successful when the following can be demonstrated:
 
@@ -497,3 +543,45 @@ Project Disclaimer⚠️⚠️
 This project is an educational MVP prototype developed as part of the Northstar Sprint.
 The order information, return scenarios and other customer data used within the prototype are simulated and should not be interpreted as real Northstar customer or operational data.
 The prototype is intended to demonstrate the concept, workflow and technical feasibility of a self-service support experience rather than serve as a production customer-support system.
+
+
+***** HOW TO SET UP THE PROJECT*****
+Prerequisites
+A person running the project should have:
+Git
+Node.js
+npm
+A web browser
+Access to the GitHub repository
+
+Step 1 — Clone the repository
+Open Git Bash or another terminal and run:
+git clone [GITHUB_REPOSITORY_URL]
+Then enter the project:
+cd northstar-support-deflection-mvp
+
+Step 2 — Enter the backend directory
+cd backend
+
+Step 3 — Install backend dependencies
+Run:
+npm install
+This installs the dependencies defined in package.json.
+
+17. HOW TO RUN THE PROJECT
+Step 1 — Start the backend
+From the backend directory, run the backend using the command confirmed by the final package.json.
+For example, if the repository uses a development script:
+npm run dev
+If it does not have a dev script, use the actual command configured in the repository, such as:
+node server.js
+The README should contain the exact command that has been tested successfully by the team.
+When the backend starts successfully, it should display its local server address in the terminal.
+For your current setup, you have previously confirmed that the API runs on:
+http://localhost:5001
+
+Step 2 — Open the frontend
+Open the project's frontend through the method documented and tested by the team.
+The frontend should then communicate with the running backend API.
+Important
+The backend must remain running while testing features that depend on the API.
